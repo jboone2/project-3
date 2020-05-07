@@ -90,13 +90,7 @@ let findAllbitBatBotOrNots3 = (inArray) => {
 
 let findAllbitBatBotOrNots4 = (inArray) => {
   // Uses Array.forEach and Array.push
-  let arr = [2,3,5];
-  let resultStr="";
-  for(let n of arr){
-  resultStr = resultStr + n + " ";
-  }
 
-  console.log(resultStr);
 };
 
 //test the functions
