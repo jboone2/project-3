@@ -11,9 +11,15 @@ let clickHandler = function() {
   let prefixURL =
     'https://dog.ceo/api/breed/';
   let suffixURL = '/images/random/6';
+  let requestURL;
   //get value entered by user from textbox
   let breed = (document.querySelector('input[type = "text"]').value).toLowerCase();
-  let requestURL = prefixURL + breed + suffixURL;
+  if (breed.includes(" ")) {
+    let complexBreed = breed.split(" ");
+    requestURL = prefixURL + complexBreed[1] + '/' + complexBreed[0] + suffixURL;
+  } else {
+    requestURL = prefixURL + breed + suffixURL;
+  }
   // Extra credit to successfully handle breeds with spaces
   console.log(requestURL);
 
