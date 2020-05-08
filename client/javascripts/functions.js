@@ -5,15 +5,10 @@ let fillArray = (start, stop, step) => Array.from({
   length: (stop - start) / step + 1
 }, (_, i) => start + (i * step));
 
-//create an array of the numbers 1 - 100
 let arrOf1To100 = fillArray(1, 100, 1);
 
-//log the array for inspection
-console.log(arrOf1To100);
-
-
 let bitBatBotOrNot = (n) => {
-  //your code goes here
+  //Determine bitBatBotorNot string for a given number
   let result = (``);
   let notFlag = 1;
   if (n % 3 == 0) {
@@ -35,7 +30,7 @@ let bitBatBotOrNot = (n) => {
 };
 
 let bitBatBotOrNotStringMaker = (n) => {
-  //your code goes here
+  //Add prepended number to bitBatBotOrNot string
   let result = (n + `: `);
   let notFlag = 1;
   if (n % 3 == 0) {
@@ -75,30 +70,31 @@ let findAllbitBatBotOrNots2 = (inArray) => {
 
 let findAllbitBatBotOrNots3 = (inArray) => {
   // Uses for..of loop and Array.push
-  //console.log(arr);
   var outArray = [];
   for (const element of inArray) {
-    console.log(inArray[element]);
-    outArray.push(bitBatBotOrNotStringMaker(inArray));
+    outArray.push(bitBatBotOrNotStringMaker(element));
   }
-  //console.log(outArray);
-  //for (var item in outArray) {
-
-  //  }
+  console.log(outArray);
   return outArray;
 };
 
 let findAllbitBatBotOrNots4 = (inArray) => {
   // Uses Array.forEach and Array.push
-
+  var outArray = [];
+  inArray.forEach((element) => {
+    outArray.push(bitBatBotOrNotStringMaker(element));
+  });
+  console.log(outArray);
+  return outArray;
 };
 
-//test the functions
-
-// findAllbitBatBotOrNots1(arrOf1To100)
-//
-// findAllbitBatBotOrNots2(arrOf1To100)
-//
-// findAllbitBatBotOrNots3(arrOf1To100)
-//
-// findAllbitBatBotOrNots4(arrOf1To100)
+let findAllbitBatBotOrNotsXC = (inArray) => {
+  // Uses for..in loop and Array.push
+  var outArray = [];
+  var j;
+  for (j in inArray) {
+    outArray.push(bitBatBotOrNotStringMaker(inArray[j]));
+  }
+  console.log(outArray);
+  return outArray;
+};
